@@ -34,7 +34,7 @@ class AppTheme{
       headline4: TextStyle(
         color: AppColors.fontLight,
         fontSize: 30,
-        fontWeight: AppFonts.bold
+        fontWeight: AppFonts.regular
       ),
 
       headline5: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:kkn_unhas_mamajang_106/ui/home/home_content.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 class HomeScreen extends StatefulWidget{
@@ -9,6 +10,7 @@ class HomeScreen extends StatefulWidget{
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  List _screens = [HomeContent()];
 
   void _updateIndex(int value){
     setState(() {
@@ -19,12 +21,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Body
+      body: _screens[_currentIndex],
+
       // Bottom NavBar
       bottomNavigationBar: CurvedNavigationBar(
         index: _currentIndex,
         onTap: _updateIndex,
         height: 50,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Colors.transparent,
         color: AppColors.primaryColor,
         animationDuration: Duration(milliseconds: 200),
         items: [
