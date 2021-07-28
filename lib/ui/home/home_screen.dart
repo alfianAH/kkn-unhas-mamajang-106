@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/home/home_content.dart';
+import 'package:kkn_unhas_mamajang_106/ui/news/news_screen.dart';
+import 'package:kkn_unhas_mamajang_106/ui/settings/settings_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 class HomeScreen extends StatefulWidget{
@@ -10,7 +12,7 @@ class HomeScreen extends StatefulWidget{
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
-  List _screens = [HomeContent()];
+  List _screens = [HomeContent(), NewsScreen(), SettingsScreen()];
 
   void _updateIndex(int value){
     setState(() {
@@ -23,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       // Body
       body: _screens[_currentIndex],
+      extendBody: true,
 
       // Bottom NavBar
       bottomNavigationBar: CurvedNavigationBar(

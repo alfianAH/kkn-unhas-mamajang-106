@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/home/poster_list.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
+/// [HomeContent] is for poster list
 class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class HomeContent extends StatelessWidget{
 
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.fromLTRB(18, 18, 18, 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
