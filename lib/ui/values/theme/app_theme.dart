@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
-import 'package:kkn_unhas_mamajang_106/ui/values/fonts/app_fonts.dart';
+import 'package:kkn_unhas_mamajang_106/ui/values/fonts/app_font_size.dart';
+import 'package:kkn_unhas_mamajang_106/ui/values/fonts/app_font_weight.dart';
 
 /// Application Theme
 /// There are [darkTheme] and [lightTheme]
@@ -15,68 +16,68 @@ class AppTheme{
     textTheme: TextTheme(
       headline1: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 40,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline1,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline2: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 35,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline2,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline3: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 30,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline3,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline4: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 30,
-        fontWeight: AppFonts.regular
+        fontSize: AppFontSize.headline4,
+        fontWeight: AppFontWeight.regular
       ),
 
       headline5: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 20,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline5,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline6: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 20,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline6,
+        fontWeight: AppFontWeight.bold
       ),
 
       subtitle1: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 25,
-        fontWeight: AppFonts.light
+        fontSize: AppFontSize.subtitle1,
+        fontWeight: AppFontWeight.light
       ),
 
       subtitle2: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 15,
-        fontWeight: AppFonts.extraLight
+        fontSize: AppFontSize.subtitle2,
+        fontWeight: AppFontWeight.extraLight
       ),
 
       bodyText1: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 25,
-        fontWeight: AppFonts.regular,
+        fontSize: AppFontSize.bodyText1,
+        fontWeight: AppFontWeight.regular,
       ),
 
       bodyText2: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 15,
-        fontWeight: AppFonts.regular,
+        fontSize: AppFontSize.bodyText2,
+        fontWeight: AppFontWeight.regular,
       ),
 
       caption: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 20,
-        fontWeight: AppFonts.regular,
+        fontSize: AppFontSize.caption,
+        fontWeight: AppFontWeight.regular,
       ),
     ),
   );
@@ -89,68 +90,68 @@ class AppTheme{
     textTheme: TextTheme(
       headline1: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 40,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline1,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline2: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 35,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline2,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline3: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 30,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline3,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline4: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 30,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline4,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline5: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 20,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline5,
+        fontWeight: AppFontWeight.bold
       ),
 
       headline6: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 20,
-        fontWeight: AppFonts.bold
+        fontSize: AppFontSize.headline6,
+        fontWeight: AppFontWeight.bold
       ),
 
       subtitle1: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 25,
-        fontWeight: AppFonts.light
+        fontSize: AppFontSize.subtitle1,
+        fontWeight: AppFontWeight.light
       ),
 
       subtitle2: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 15,
-        fontWeight: AppFonts.extraLight
+        fontSize: AppFontSize.subtitle2,
+        fontWeight: AppFontWeight.extraLight
       ),
 
       bodyText1: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 25,
-        fontWeight: AppFonts.regular,
+        fontSize: AppFontSize.bodyText1,
+        fontWeight: AppFontWeight.regular,
       ),
 
       bodyText2: TextStyle(
         color: AppColors.fontDark,
-        fontSize: 15,
-        fontWeight: AppFonts.regular,
+        fontSize: AppFontSize.bodyText2,
+        fontWeight: AppFontWeight.regular,
       ),
 
       caption: TextStyle(
         color: AppColors.fontLight,
-        fontSize: 20,
-        fontWeight: AppFonts.regular,
+        fontSize: AppFontSize.caption,
+        fontWeight: AppFontWeight.regular,
       ),
     ),
   );
