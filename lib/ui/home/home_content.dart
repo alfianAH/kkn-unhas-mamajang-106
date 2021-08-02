@@ -16,7 +16,7 @@ class HomeContent extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'KKN Mamajang 106',
+              'KKN Unhas Mamajang 106',
               style: textTheme.headline1,
             ),
 

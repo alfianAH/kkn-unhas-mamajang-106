@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// [NewsScreen] is for news providers and news list
 class NewsScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
