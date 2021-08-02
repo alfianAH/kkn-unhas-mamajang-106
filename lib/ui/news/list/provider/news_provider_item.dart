@@ -15,6 +15,7 @@ class NewsProviderItem extends StatelessWidget{
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
+      padding: const EdgeInsets.only(bottom: 8),
       child: Column(
         children: [
           Row(

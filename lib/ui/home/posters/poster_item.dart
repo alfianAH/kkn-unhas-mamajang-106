@@ -39,7 +39,7 @@ class PosterItem extends StatelessWidget{
                   child: Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                     style: textTheme.headline5,
-                    maxLines: 2,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
                 )

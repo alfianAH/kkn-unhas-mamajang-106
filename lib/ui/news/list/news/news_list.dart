@@ -13,7 +13,7 @@ class _NewsListState extends State<NewsList> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 8),
-      height: 300,
+      height: 275,
       child: ListView.builder(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
