@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kkn_unhas_mamajang_106/ui/home/poster_item.dart';
+import 'package:kkn_unhas_mamajang_106/ui/home/posters/poster_item.dart';
 
 class PosterList extends StatefulWidget{
   @override
