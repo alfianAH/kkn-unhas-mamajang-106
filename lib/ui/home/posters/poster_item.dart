@@ -6,7 +6,7 @@ class PosterItem extends StatelessWidget{
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
-      width: 250,
+      width: 200,
       padding: const EdgeInsets.only(right: 8),
       child: InkWell(
         onTap: (){},
@@ -30,8 +30,6 @@ class PosterItem extends StatelessWidget{
                   )
                 ),
               ),
-
-              SizedBox(height: 8,),
 
               // Poster title
               Expanded(
