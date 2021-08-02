@@ -3,6 +3,14 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 class SettingsScreen extends StatefulWidget{
+  final ValueNotifier<ThemeMode> notifier;
+  final ThemeMode currentTheme;
+
+  SettingsScreen({
+    required this.notifier,
+    required this.currentTheme
+  });
+
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
 }
@@ -44,23 +52,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 value: isDarkMode,
                 height: 30,
                 width: 60,
-                activeColor: AppColors.fontDark,
-                activeToggleColor: AppColors.bodyLight,
+                activeColor: AppColors.switchDark,
+                activeToggleColor: AppColors.fontLight,
                 activeIcon: Icon(
                   Icons.dark_mode_rounded,
-                  color: AppColors.fontDark,
+                  color: AppColors.switchDark,
                 ),
 
-                inactiveColor: AppColors.bodyLight,
-                inactiveToggleColor: AppColors.fontDark,
+                inactiveColor: AppColors.switchLight,
+                inactiveToggleColor: AppColors.fontLight,
                 inactiveIcon: Icon(
                   Icons.light_mode_rounded,
-                  color: AppColors.fontLight,
+                  color: AppColors.switchLight,
                 ),
                 onToggle: (value){
                   setState(() {
                     isDarkMode = value;
                   });
+
+                  widget.notifier.value = widget.currentTheme == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
                 }
               ),
             ],

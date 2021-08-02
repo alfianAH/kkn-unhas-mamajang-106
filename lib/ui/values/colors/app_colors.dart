@@ -11,4 +11,7 @@ class AppColors{
 
   static const card = Color.fromRGBO(220, 224, 245, 1);
   static const link = Color.fromRGBO(37, 195, 229, 1);
+
+  static const switchDark = Color.fromRGBO(69, 73, 109, 1);
+  static const switchLight = Color.fromRGBO(141, 140, 177, 1);
 }

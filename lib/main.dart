@@ -13,13 +13,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: _notifier,
-      builder: (context, mode, child){
+      builder: (BuildContext context, ThemeMode mode, Widget? child){
         return MaterialApp(
           title: 'KKN Unhas Mamajang G-106',
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: mode,
-          home: HomeScreen(),
+          home: HomeScreen(
+            notifier: _notifier,
+            currentTheme: mode,
+          ),
         );
       }
     );

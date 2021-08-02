@@ -6,13 +6,20 @@ import 'package:kkn_unhas_mamajang_106/ui/settings/settings_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 class HomeScreen extends StatefulWidget{
+  final ValueNotifier<ThemeMode> notifier;
+  final ThemeMode currentTheme;
+
+  HomeScreen({
+    required this.notifier,
+    required this.currentTheme
+  });
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
-  List _screens = [HomeContent(), NewsScreen(), SettingsScreen()];
 
   void _updateIndex(int value){
     setState(() {
@@ -22,9 +29,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List screens = [HomeContent(),
+      NewsScreen(),
+      SettingsScreen(
+        notifier: widget.notifier,
+        currentTheme: widget.currentTheme,
+      ),
+    ];
+
     return Scaffold(
       // Body
-      body: _screens[_currentIndex],
+      body: screens[_currentIndex],
       extendBody: true,
 
       // Bottom NavBar
