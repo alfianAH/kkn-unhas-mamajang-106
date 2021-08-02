@@ -16,7 +16,7 @@ class NewsScreen extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Berita',
+              'Berita Harian',
               style: textTheme.headline1,
             ),
 
