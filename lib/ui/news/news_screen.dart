@@ -11,7 +11,7 @@ class NewsScreen extends StatelessWidget{
 
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.fromLTRB(18, 18, 18, 50),
+        padding: const EdgeInsets.all(18),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
