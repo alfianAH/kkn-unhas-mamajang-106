@@ -9,9 +9,7 @@ class NewsListMode extends StatelessWidget{
         shrinkWrap: true,
         itemBuilder: (context, index){
           // Check image URL is null or not
-          return NewsItemListMode(
-            newsData:
-          );
+          return Container();
         },
         itemCount: 25,
       ),

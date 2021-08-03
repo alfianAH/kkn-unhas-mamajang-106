@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/list/news/news_list_grid_mode.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/provider/news_provider_detail_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
@@ -7,9 +8,11 @@ import 'package:kkn_unhas_mamajang_106/ui/values/news/news_provider.dart';
 
 class NewsProviderItem extends StatelessWidget{
   final NewsProvider newsProvider;
+  final NewsProviderDetailResponse newsProviderDetailResponse;
 
   NewsProviderItem({
     required this.newsProvider,
+    required this.newsProviderDetailResponse
   });
 
   @override
@@ -19,6 +22,7 @@ class NewsProviderItem extends StatelessWidget{
     return Container(
       padding: const EdgeInsets.only(bottom: 8),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             // News Provider title
@@ -52,7 +56,7 @@ class NewsProviderItem extends StatelessWidget{
 
           // News List
           NewsListGridMode(
-            newsProviderLinkName: newsProvider.linkName,
+            newsProviderDetailResponse: newsProviderDetailResponse,
           ),
         ],
       ),
