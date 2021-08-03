@@ -14,4 +14,6 @@ class AppColors{
 
   static const switchDark = Color.fromRGBO(69, 73, 109, 1);
   static const switchLight = Color.fromRGBO(141, 140, 177, 1);
+  
+  static const categorySelected = Color.fromRGBO(99, 114, 255, 1);
 }

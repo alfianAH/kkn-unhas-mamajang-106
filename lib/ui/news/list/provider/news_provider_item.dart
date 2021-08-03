@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/list/news/news_list_grid_mode.dart';
+import 'package:kkn_unhas_mamajang_106/ui/news/provider/news_provider_detail_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/news/news_provider.dart';
 
@@ -37,7 +38,12 @@ class NewsProviderItem extends StatelessWidget{
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = (){
-
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context){
+                          return NewsProviderDetailScreen(
+                            newsProvider: newsProvider
+                          );
+                        }));
                     }
                 )
               )
