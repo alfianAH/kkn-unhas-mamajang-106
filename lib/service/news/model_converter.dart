@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:chopper/chopper.dart';
-import 'package:kkn_unhas_mamajang_106/model/news/news_provider_list_response.dart';
+import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 
 class ModelConverter implements Converter{
   @override
@@ -41,7 +41,7 @@ class ModelConverter implements Converter{
 
     try{
       var mapData = json.decode(body);
-      var newsModel = NewsProviderListResponse.fromJson(mapData);
+      var newsModel = NewsProviderDetailResponse.fromJson(mapData);
 
       return response.copyWith<BodyType>(body: newsModel as BodyType);
     } catch(e){
