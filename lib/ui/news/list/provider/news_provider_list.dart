@@ -11,8 +11,7 @@ class NewsProviderList extends StatelessWidget{
         itemCount: newsProviders.length,
         itemBuilder: (BuildContext context, int index){
           return NewsProviderItem(
-            newsProviderName: newsProviders[index].name,
-            newsProviderLinkName: newsProviders[index].linkName,
+            newsProvider: newsProviders[index]
           );
         }
       ),

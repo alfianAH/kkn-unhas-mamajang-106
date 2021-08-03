@@ -2,14 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/list/news/news_list.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
+import 'package:kkn_unhas_mamajang_106/ui/values/news/news_provider.dart';
 
 class NewsProviderItem extends StatelessWidget{
-  final String newsProviderName;
-  final String newsProviderLinkName;
+  final NewsProvider newsProvider;
 
   NewsProviderItem({
-    required this.newsProviderName,
-    required this.newsProviderLinkName
+    required this.newsProvider,
   });
 
   @override
@@ -25,7 +24,7 @@ class NewsProviderItem extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                newsProviderName,
+                newsProvider.name,
                 style: textTheme.headline2,
               ),
 
@@ -47,7 +46,7 @@ class NewsProviderItem extends StatelessWidget{
 
           // News List
           NewsList(
-            newsProviderLinkName: newsProviderLinkName,
+            newsProviderLinkName: newsProvider.linkName,
           ),
         ],
       ),
