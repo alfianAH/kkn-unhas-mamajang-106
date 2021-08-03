@@ -2,7 +2,7 @@ import 'package:chopper/chopper.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 import 'package:kkn_unhas_mamajang_106/service/news/news_provider_service.dart';
-import 'package:kkn_unhas_mamajang_106/ui/news/list/news/news_item.dart';
+import 'package:kkn_unhas_mamajang_106/ui/news/list/news/news_item_grid_mode.dart';
 import 'package:provider/provider.dart';
 
 class NewsList extends StatefulWidget{
@@ -25,7 +25,7 @@ class _NewsListState extends State<NewsList> {
 
     return FutureBuilder<Response<NewsProviderDetailResponse>>(
       future: Provider.of<NewsProviderService>(context)
-          .getNewsProviderDetail(widget.newsProviderLinkName),
+          .getNewsProviderDetail(widget.newsProviderLinkName, ''),
 
       builder: (BuildContext context,
           AsyncSnapshot<Response<NewsProviderDetailResponse>> snapshot){
@@ -71,7 +71,7 @@ class _NewsListState extends State<NewsList> {
                 itemBuilder: (context, index){
                   print(newsProviderDetailResponse.data![index]);
 
-                  return NewsItem(
+                  return NewsItemGridMode(
                     newsData: newsProviderDetailResponse.data![index],
                   );
                 }

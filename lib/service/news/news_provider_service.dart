@@ -25,6 +25,8 @@ abstract class NewsProviderService extends ChopperService{
   @Get(path: '.')
   Future<Response<NewsProviderListResponse>> getNewsProviderList();
 
-  @Get(path: 'v1/{newsProviderName}/')
-  Future<Response<NewsProviderDetailResponse>> getNewsProviderDetail(@Path() String newsProviderName);
+  @Get(path: 'v1/{newsProviderName}/{newsCategoryName}')
+  Future<Response<NewsProviderDetailResponse>> getNewsProviderDetail(
+      @Path() String newsProviderName,
+      @Path() String newsCategoryName);
 }
