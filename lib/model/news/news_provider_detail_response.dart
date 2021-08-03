@@ -74,25 +74,3 @@ class Data {
   }
 
 }
-
-class Image {
-  String? small;
-  String? large;
-
-  Image({
-      this.small, 
-      this.large});
-
-  Image.fromJson(dynamic json) {
-    small = json["small"];
-    large = json["large"];
-  }
-
-  Map<String, dynamic> toJson() {
-    var map = <String, dynamic>{};
-    map["small"] = small;
-    map["large"] = large;
-    return map;
-  }
-
-}
