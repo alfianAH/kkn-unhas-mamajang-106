@@ -5,18 +5,18 @@ import 'package:kkn_unhas_mamajang_106/service/news/news_provider_service.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/list/news/news_item_grid_mode.dart';
 import 'package:provider/provider.dart';
 
-class NewsList extends StatefulWidget{
+class NewsListGridMode extends StatefulWidget{
   final String newsProviderLinkName;
 
-  NewsList({
+  NewsListGridMode({
     required this.newsProviderLinkName,
   });
 
   @override
-  _NewsListState createState() => _NewsListState();
+  _NewsListGridModeState createState() => _NewsListGridModeState();
 }
 
-class _NewsListState extends State<NewsList> {
+class _NewsListGridModeState extends State<NewsListGridMode> {
   ScrollController _scrollController = ScrollController();
 
   @override

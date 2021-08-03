@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 
-class NewsItem extends StatelessWidget{
+class NewsItemGridMode extends StatelessWidget{
   final NewsData newsData;
 
-  NewsItem({
+  NewsItemGridMode({
     required this.newsData,
   });
 
