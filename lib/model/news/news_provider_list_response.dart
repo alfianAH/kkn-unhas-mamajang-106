@@ -5,6 +5,11 @@
 /// 4. tribun-news = bisnis, lifestyle
 
 class NewsProviderListResponse {
+  /// [listApi] has 4 keys:
+  /// [all] : News Provider's detail link
+  /// [type] : News Provider's types detail link
+  /// [listType] : List of types in News Provider
+  /// [example] : Usage example of the types detail of News Provider
   Map<String, dynamic>? listApi;
   String? author;
   String? source;
