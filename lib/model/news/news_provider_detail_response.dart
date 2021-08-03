@@ -3,7 +3,7 @@ class NewsProviderDetailResponse {
   String? status;
   String? messages;
   int? total;
-  List<Data>? data;
+  List<NewsData>? data;
 
   NewsProviderDetailResponse({
       this.code, 
@@ -20,7 +20,7 @@ class NewsProviderDetailResponse {
     if (json["data"] != null) {
       data = [];
       json["data"].forEach((v) {
-        data?.add(Data.fromJson(v));
+        data?.add(NewsData.fromJson(v));
       });
     }
   }
@@ -39,7 +39,7 @@ class NewsProviderDetailResponse {
 
 }
 
-class Data {
+class NewsData {
   String? title;
   String? link;
   String? contentSnippet;
@@ -47,14 +47,14 @@ class Data {
   /// [image] has 2 keys, [small] and [large]
   Map<String, String>? image;
 
-  Data({
+  NewsData({
       this.title, 
       this.link, 
       this.contentSnippet, 
       this.isoDate, 
       this.image});
 
-  Data.fromJson(dynamic json) {
+  NewsData.fromJson(dynamic json) {
     title = json["title"];
     link = json["link"];
     contentSnippet = json["contentSnippet"];
