@@ -1,6 +1,7 @@
 import 'package:chopper/chopper.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_list_response.dart';
+import 'package:kkn_unhas_mamajang_106/utils/model_converter.dart';
 
 part 'news_provider_service.chopper.dart';
 
@@ -14,7 +15,7 @@ abstract class NewsProviderService extends ChopperService{
         _$NewsProviderService(),
       ],
       interceptors: [HttpLoggingInterceptor()],
-      // converter: ModelConverter(),
+      converter: ModelConverter(),
       errorConverter: JsonConverter(),
     );
 
@@ -24,6 +25,6 @@ abstract class NewsProviderService extends ChopperService{
   @Get(path: '.')
   Future<Response<NewsProviderListResponse>> getNewsProviderList();
 
-  @Get(path: 'v1/{newsProviderName}')
+  @Get(path: 'v1/{newsProviderName}/')
   Future<Response<NewsProviderDetailResponse>> getNewsProviderDetail(@Path() String newsProviderName);
 }
