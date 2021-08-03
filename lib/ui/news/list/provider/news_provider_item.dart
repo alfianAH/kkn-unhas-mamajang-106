@@ -5,9 +5,11 @@ import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 class NewsProviderItem extends StatelessWidget{
   final String newsProviderName;
+  final String newsProviderLinkName;
 
   NewsProviderItem({
-    required this.newsProviderName
+    required this.newsProviderName,
+    required this.newsProviderLinkName
   });
 
   @override
@@ -44,7 +46,9 @@ class NewsProviderItem extends StatelessWidget{
           ),
 
           // News List
-          NewsList(),
+          NewsList(
+            newsProviderLinkName: newsProviderLinkName,
+          ),
         ],
       ),
     );

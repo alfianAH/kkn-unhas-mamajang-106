@@ -3,7 +3,12 @@ import 'package:kkn_unhas_mamajang_106/ui/news/list/provider/news_provider_list.
 
 /// [NewsScreen] is for news providers and news list
 class NewsScreen extends StatelessWidget{
-  final newsProviderNameList = ['CNN News', 'CNBC News', 'Okezone News', 'Tribun News'];
+  final newsProviderNameMap = {
+    'CNN News': 'cnn-news',
+    'CNBC News': 'cnbc-news',
+    'Okezone News': 'okezone-news',
+    'Tribun News': 'tribun-news'
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class NewsScreen extends StatelessWidget{
 
             // News Provider List
             NewsProviderList(
-              newsProviderNameList: newsProviderNameList,
+              newsProviderNameMap: newsProviderNameMap,
             ),
           ],
         )

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/list/provider/news_provider_item.dart';
 
 class NewsProviderList extends StatelessWidget{
-  final List<String> newsProviderNameList;
+  final Map<String, String> newsProviderNameMap;
 
   NewsProviderList({
-    required this.newsProviderNameList
+    required this.newsProviderNameMap
   });
 
   @override
@@ -13,10 +13,11 @@ class NewsProviderList extends StatelessWidget{
     return Container(
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: newsProviderNameList.length,
+        itemCount: newsProviderNameMap.length,
         itemBuilder: (BuildContext context, int index){
           return NewsProviderItem(
-            newsProviderName: newsProviderNameList[index],
+            newsProviderName: newsProviderNameMap.keys.toList()[index],
+            newsProviderLinkName: newsProviderNameMap.values.toList()[index],
           );
         }
       ),
