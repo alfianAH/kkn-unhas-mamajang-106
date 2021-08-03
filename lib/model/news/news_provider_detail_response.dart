@@ -45,7 +45,7 @@ class NewsData {
   String? contentSnippet;
   String? isoDate;
   /// [image] has 2 keys, [small] and [large]
-  Map<String, String>? image;
+  var image;
 
   NewsData({
       this.title, 
