@@ -23,8 +23,10 @@ class NewsProviderDetailScreen extends StatelessWidget{
 
             SizedBox(height: 8,),
 
+            // News Category
+
             // News List
-            
+
           ]
         ),
       ),
