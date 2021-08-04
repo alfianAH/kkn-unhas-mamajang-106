@@ -99,3 +99,11 @@ flutter:
     - family: Kanit
       fonts:
         - asset: fonts/Kanit-Regular.ttf
+        - asset: fonts/Kanit-Bold.ttf
+          weight: 700
+        - asset: fonts/Kanit-Bold.ttf
+          weight: 600
+        - asset: fonts/Kanit-Light.ttf
+          weight: 300
+        - asset: fonts/Kanit-ExtraLight.ttf
+          weight: 200

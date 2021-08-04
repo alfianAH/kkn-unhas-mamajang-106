@@ -41,13 +41,13 @@ class AppTheme{
       headline5: TextStyle(
         color: AppColors.fontLight,
         fontSize: AppFontSize.headline5,
-        fontWeight: AppFontWeight.bold
+        fontWeight: AppFontWeight.semiBold
       ),
 
       headline6: TextStyle(
         color: AppColors.fontDark,
         fontSize: AppFontSize.headline6,
-        fontWeight: AppFontWeight.bold
+        fontWeight: AppFontWeight.semiBold
       ),
 
       subtitle1: TextStyle(
