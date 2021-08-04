@@ -6,18 +6,14 @@ class NewsProvider{
   /// News provider's [linkName] in API
   String linkName;
 
-  /// The list of news provider's [categoryName] to show in UI
-  /// Example: Ekonomi
-  List<String> categoryName;
-
-  /// The list of news provider's [categoryLinkName] in API
-  List<String> categoryLinkName;
+  /// The list of news provider's category
+  /// Usage: `category name`: `category link`
+  Map<String, String> categoryMap;
 
   NewsProvider({
     required this.name,
     required this.linkName,
-    required this.categoryName,
-    required this.categoryLinkName,
+    required this.categoryMap,
   });
 }
 
@@ -31,31 +27,44 @@ List<NewsProvider> newsProviders = [
   NewsProvider(
     name: 'CNN News',
     linkName: 'cnn-news',
-    categoryName: ['Semua', 'Ekonomi', 'Gaya Hidup'],
-    categoryLinkName: ['', 'ekonomi', 'gaya-hidup']
+    categoryMap: {
+      'Semua' : '',
+      'Ekonomi': 'ekonomi',
+      'Gaya Hidup': 'gaya-hidup'
+    },
   ),
 
   // CNBC News
   NewsProvider(
     name: 'CNBC News',
     linkName: 'cnbc-news',
-    categoryName: ['Semua', 'Pasar', 'Investasi', 'Gaya Hidup'],
-    categoryLinkName: ['', 'market', 'investment', 'lifestyle'],
+    categoryMap: {
+      'Semua' : '',
+      'Pasar': 'market',
+      'Investasi': 'investment',
+      'Gaya Hidup': 'lifestyle'
+    },
   ),
 
   // Okezone News
   NewsProvider(
     name: 'Okezone News',
     linkName: 'okezone-news',
-    categoryName: ['Semua', 'Ekonomi', 'Gaya Hidup'],
-    categoryLinkName: ['', 'economy', 'lifestyle']
+    categoryMap: {
+      'Semua' : '',
+      'Ekonomi': 'economy',
+      'Gaya Hidup': 'lifestyle'
+    },
   ),
 
   // Tribun News
   NewsProvider(
     name: 'Tribun News',
     linkName: 'tribun-news',
-    categoryName: ['Semua', 'Bisnis', 'Gaya Hidup'],
-    categoryLinkName: ['', 'bisnis', 'lifestyle']
+    categoryMap: {
+      'Semua' : '',
+      'Bisnis': 'bisnis',
+      'Gaya Hidup': 'lifestyle'
+    },
   ),
 ];

@@ -63,12 +63,17 @@ class NewsProviderDetailScreen extends StatelessWidget{
                 unselectedItemTextDarkThemeColor: AppColors.fontLight,
                 unselectedItemTextLightThemeColor: AppColors.fontLight,
 
-                items: newsProvider.categoryName.map((category){
-                  return CategoryPickerItem(value: category);
+                items: newsProvider.categoryMap.keys.map((categoryName) {
+                  String categoryLink = newsProvider.categoryMap[categoryName].toString();
+                  return CategoryPickerItem(
+                    value: categoryLink,
+                    label: categoryName
+                  );
                 }).toList(),
 
-                onValueChanged: (value){
+                onValueChanged: (item){
                   // News List
+
                 },
               ),
 
