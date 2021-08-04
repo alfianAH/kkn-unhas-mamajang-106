@@ -37,8 +37,8 @@ class NewsItemListMode extends StatelessWidget{
                     bottomLeft: Radius.circular(10)
                   ),
                   child: Container(
-                    width: 150,
-                    height: 150,
+                    width: 140,
+                    height: 140,
                     child: Image.network(
                       newsData.image.runtimeType == String
                           ? newsData.image : newsData.image['small'],

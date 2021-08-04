@@ -13,7 +13,7 @@ class _PosterListState extends State<PosterList> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 8),
-      height: 275,
+      height: 300,
       child: ListView.builder(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
