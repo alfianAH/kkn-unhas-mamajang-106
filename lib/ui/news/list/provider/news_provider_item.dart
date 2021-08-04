@@ -47,7 +47,8 @@ class NewsProviderItem extends StatelessWidget{
                           return NewsProviderDetailScreen(
                             newsProvider: newsProvider
                           );
-                        }));
+                        })
+                      );
                     }
                 )
               )

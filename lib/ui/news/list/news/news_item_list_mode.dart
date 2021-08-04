@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
+import 'package:kkn_unhas_mamajang_106/ui/news/detail/news_detail_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 import 'package:kkn_unhas_mamajang_106/utils/date_converter.dart';
 
@@ -17,7 +18,15 @@ class NewsItemListMode extends StatelessWidget{
     return Container(
       padding: const EdgeInsets.only(top: 8),
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context){
+              return NewsDetailScreen(
+                newsData: newsData
+              );
+            })
+          );
+        },
         child: Card(
           color: AppColors.card,
           shape: RoundedRectangleBorder(
