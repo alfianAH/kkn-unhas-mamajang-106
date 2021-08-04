@@ -48,8 +48,10 @@ class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
                     ),
                   ),
 
+                  SizedBox(width: 8),
+
                   Text(
-                    'Berita Harian',
+                    widget.newsProvider.name,
                     style: textTheme.headline1,
                   )
                 ],
@@ -101,7 +103,6 @@ class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
                   if(snapshot.connectionState == ConnectionState.done){
                     // If snapshot has error, ...
                     if(snapshot.hasError){
-                      print('has error');
                       return Container(
                         padding: const EdgeInsets.only(top: 8),
                         child: Text(
@@ -127,7 +128,6 @@ class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
 
                     // If there are responses, ...
                     if(newsProviderDetailResponse.total! > 0){
-                      print("Show news list");
                       // Show news list
                       return NewsListMode(
                         newsDataList: newsProviderDetailResponse.data!

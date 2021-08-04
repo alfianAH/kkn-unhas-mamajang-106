@@ -66,7 +66,7 @@ class NewsItemListMode extends StatelessWidget{
                     children: [
                       // News title
                       Text(
-                        newsData.title.toString(),
+                        newsData.title ?? '',
                         style: textTheme.headline6,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -74,7 +74,7 @@ class NewsItemListMode extends StatelessWidget{
 
                       // News date
                       Text(
-                        DateConverter.convertDate(newsData.isoDate.toString()),
+                        DateConverter.convertDate(newsData.isoDate ?? ''),
                         style: textTheme.subtitle2,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -82,7 +82,7 @@ class NewsItemListMode extends StatelessWidget{
 
                       // News content
                       Text(
-                        newsData.contentSnippet.toString(),
+                        newsData.contentSnippet ?? 'Klik untuk melihat detail',
                         style: textTheme.bodyText2,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
