@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/detail/news_detail_screen.dart';
+import 'package:kkn_unhas_mamajang_106/utils/image_network_loader.dart';
 
 class NewsItemGridMode extends StatelessWidget{
   final NewsData newsData;
@@ -40,18 +41,10 @@ class NewsItemGridMode extends StatelessWidget{
                   flex: 2,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: new Image.network(
-                      newsData.image.runtimeType == String
-                          ? newsData.image : newsData.image['small'],
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Icon(
-                          Icons.broken_image_rounded,
-                          color: textTheme.headline1!.color,
-                          size: 75
-                        );
-                      },
-                    )
+                    child: ImageNetworkLoader(
+                      newsData: newsData,
+                      boxFit: BoxFit.fitHeight,
+                    ),
                   ),
                 ),
 

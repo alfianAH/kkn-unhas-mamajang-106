@@ -3,6 +3,7 @@ import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.
 import 'package:kkn_unhas_mamajang_106/ui/news/detail/news_detail_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 import 'package:kkn_unhas_mamajang_106/utils/date_converter.dart';
+import 'package:kkn_unhas_mamajang_106/utils/image_network_loader.dart';
 
 class NewsItemListMode extends StatelessWidget{
   final NewsData newsData;
@@ -48,16 +49,9 @@ class NewsItemListMode extends StatelessWidget{
                   child: Container(
                     width: 140,
                     height: 140,
-                    child: Image.network(
-                      newsData.image.runtimeType == String
-                          ? newsData.image : newsData.image['small'],
-                      fit: BoxFit.fitHeight,
-                      errorBuilder: (context, exception, stackTrace){
-                        return Icon(
-                          Icons.broken_image,
-                          size: 75,
-                        );
-                      },
+                    child: ImageNetworkLoader(
+                      newsData: newsData,
+                      boxFit: BoxFit.fitHeight,
                     ),
                   )
                 )

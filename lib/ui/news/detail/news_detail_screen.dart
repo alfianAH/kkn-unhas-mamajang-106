@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 import 'package:kkn_unhas_mamajang_106/utils/date_converter.dart';
+import 'package:kkn_unhas_mamajang_106/utils/image_network_loader.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsDetailScreen extends StatelessWidget{
@@ -68,17 +69,7 @@ class NewsDetailScreen extends StatelessWidget{
             SizedBox(height: 16,),
 
             // News image
-            Image.network(
-              newsData.image.runtimeType == String
-                  ? newsData.image : newsData.image['small'],
-              errorBuilder: (context, exception, stackTrace){
-                return Icon(
-                  Icons.broken_image,
-                  color: textTheme.headline1!.color,
-                  size: 75,
-                );
-              },
-            ),
+            ImageNetworkLoader(newsData: newsData),
 
             SizedBox(height: 8,),
 
