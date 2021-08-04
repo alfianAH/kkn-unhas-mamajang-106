@@ -16,11 +16,11 @@ class SettingsScreen extends StatefulWidget{
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool isDarkMode = true;
-
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+
+    bool isDarkMode = widget.currentTheme == ThemeMode.dark ? true : false;
 
     return Container(
       padding: const EdgeInsets.all(18),
@@ -70,7 +70,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     isDarkMode = value;
                   });
 
-                  widget.notifier.value = widget.currentTheme == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+                  widget.notifier.value = widget.currentTheme == ThemeMode.dark
+                      ? ThemeMode.light : ThemeMode.dark;
                 }
               ),
             ],
