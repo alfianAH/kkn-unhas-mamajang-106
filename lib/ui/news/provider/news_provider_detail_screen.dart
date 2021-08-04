@@ -11,19 +11,16 @@ import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/news/news_provider.dart';
 import 'package:provider/provider.dart';
 
-class NewsProviderDetailScreen extends StatefulWidget{
+class NewsProviderDetailScreen extends StatelessWidget{
   final NewsProvider newsProvider;
+
+  /// Default value of [_notifier] : ''
+  /// Because of category 'Semua'
+  final ValueNotifier<String> _notifier = ValueNotifier('');
 
   NewsProviderDetailScreen({
     required this.newsProvider
   });
-
-  @override
-  _NewsProviderDetailScreenState createState() => _NewsProviderDetailScreenState();
-}
-
-class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
-  String selectedCategory = '';
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +48,7 @@ class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
                   SizedBox(width: 8),
 
                   Text(
-                    widget.newsProvider.name,
+                    newsProvider.name,
                     style: textTheme.headline1,
                   )
                 ],
@@ -77,8 +74,8 @@ class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
                 unselectedItemTextDarkThemeColor: AppColors.fontLight,
                 unselectedItemTextLightThemeColor: AppColors.fontLight,
 
-                items: widget.newsProvider.categoryMap.keys.map((categoryName) {
-                  String categoryLink = widget.newsProvider.categoryMap[categoryName].toString();
+                items: newsProvider.categoryMap.keys.map((categoryName) {
+                  String categoryLink = newsProvider.categoryMap[categoryName].toString();
                   return CategoryPickerItem(
                     value: categoryLink,
                     label: categoryName
@@ -87,69 +84,74 @@ class _NewsProviderDetailScreenState extends State<NewsProviderDetailScreen> {
 
                 onValueChanged: (item){
                   // News List
-                  selectedCategory = item.value;
+                  _notifier.value = item.value;
                 },
               ),
 
-              // News list
-              FutureBuilder<Response<NewsProviderDetailResponse>>(
-                future: Provider.of<NewsProviderService>(context)
-                    .getNewsProviderDetail(widget.newsProvider.linkName, selectedCategory),
+              ValueListenableBuilder(
+                valueListenable: _notifier,
+                builder: (BuildContext context, String value, Widget? child){
+                  // News list
+                  return FutureBuilder<Response<NewsProviderDetailResponse>>(
+                      future: Provider.of<NewsProviderService>(context)
+                          .getNewsProviderDetail(newsProvider.linkName, value),
 
-                builder: (BuildContext context,
-                    AsyncSnapshot<Response<NewsProviderDetailResponse>> snapshot){
+                      builder: (BuildContext context,
+                          AsyncSnapshot<Response<NewsProviderDetailResponse>> snapshot){
 
-                  // If connection state is done , ...
-                  if(snapshot.connectionState == ConnectionState.done){
-                    // If snapshot has error, ...
-                    if(snapshot.hasError){
-                      return Container(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: Text(
-                          snapshot.error.toString(),
-                          style: textTheme.bodyText1,
-                        ),
-                      );
+                      // If connection state is done , ...
+                      if(snapshot.connectionState == ConnectionState.done){
+                        // If snapshot has error, ...
+                        if(snapshot.hasError){
+                          return Container(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Text(
+                              snapshot.error.toString(),
+                              style: textTheme.bodyText1,
+                            ),
+                          );
+                        }
+
+                        // Get data
+                        final newsProviderDetailResponse = snapshot.requireData.body;
+
+                        // If news detail is null, ...
+                        if(newsProviderDetailResponse == null){
+                          return Container(
+                            padding: const EdgeInsets.only(top: 8),
+                            child: Text(
+                              'Tidak ada hasil',
+                              style: textTheme.bodyText1,
+                            ),
+                          );
+                        }
+
+                        // If there are responses, ...
+                        if(newsProviderDetailResponse.total! > 0){
+                          // Show news list
+                          return NewsListMode(
+                            newsDataList: newsProviderDetailResponse.data!
+                          );
+                        }
+
+                        // Return Text if there are no responses
+                        return Container(
+                          padding: const EdgeInsets.only(top: 8),
+                          child: Text(
+                            'Total berita: 0',
+                            style: textTheme.bodyText1,
+                          ),
+                        );
+
+                      } else{ // Else, show loading
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
                     }
-
-                    // Get data
-                    final newsProviderDetailResponse = snapshot.requireData.body;
-
-                    // If news detail is null, ...
-                    if(newsProviderDetailResponse == null){
-                      return Container(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: Text(
-                          'Tidak ada hasil',
-                          style: textTheme.bodyText1,
-                        ),
-                      );
-                    }
-
-                    // If there are responses, ...
-                    if(newsProviderDetailResponse.total! > 0){
-                      // Show news list
-                      return NewsListMode(
-                        newsDataList: newsProviderDetailResponse.data!
-                      );
-                    }
-
-                    // Return Text if there are no responses
-                    return Container(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Text(
-                        'Total berita: 0',
-                        style: textTheme.bodyText1,
-                      ),
-                    );
-
-                  } else{ // Else, show loading
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
+                  );
                 }
-              )
+              ),
             ]
           ),
         ),
