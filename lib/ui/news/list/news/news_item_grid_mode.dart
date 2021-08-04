@@ -11,7 +11,6 @@ class NewsItemGridMode extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    print(newsData.image);
 
     return Container(
         width: 200,

@@ -6,7 +6,7 @@ import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  _setupLogging();
+  // _setupLogging();
   runApp(MyApp());
 }
 
