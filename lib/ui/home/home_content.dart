@@ -4,12 +4,20 @@ import 'package:kkn_unhas_mamajang_106/ui/home/posters/poster_list.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 /// [HomeContent] is for poster list
-class HomeContent extends StatelessWidget{
+class HomeContent extends StatefulWidget{
+  @override
+  _HomeContentState createState() => _HomeContentState();
+}
+
+class _HomeContentState extends State<HomeContent> {
+  ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return SingleChildScrollView(
+      controller: _scrollController,
       child: Container(
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 70),
         child: Column(
@@ -88,5 +96,11 @@ class HomeContent extends StatelessWidget{
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 }

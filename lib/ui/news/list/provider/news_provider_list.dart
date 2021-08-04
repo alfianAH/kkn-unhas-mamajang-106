@@ -6,13 +6,21 @@ import 'package:kkn_unhas_mamajang_106/ui/news/list/provider/news_provider_item.
 import 'package:kkn_unhas_mamajang_106/ui/values/news/news_provider.dart';
 import 'package:provider/provider.dart';
 
-class NewsProviderList extends StatelessWidget{
+class NewsProviderList extends StatefulWidget{
+  @override
+  _NewsProviderListState createState() => _NewsProviderListState();
+}
+
+class _NewsProviderListState extends State<NewsProviderList> {
+  ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
       child: ListView.builder(
+        controller: _scrollController,
         shrinkWrap: true,
         itemCount: newsProviders.length,
         itemBuilder: (BuildContext context, int index){
@@ -78,5 +86,11 @@ class NewsProviderList extends StatelessWidget{
         }
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 }
