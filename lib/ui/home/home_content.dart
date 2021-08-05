@@ -61,7 +61,9 @@ class _HomeContentState extends State<HomeContent> {
             ),
 
             // Covid-19 poster list
-            PosterList(),
+            PosterList(
+              posterCategory: 'covid-19',
+            ),
 
             SizedBox(height: 8,),
 
@@ -91,7 +93,9 @@ class _HomeContentState extends State<HomeContent> {
             ),
 
             // UMKM poster list
-            PosterList(),
+            PosterList(
+              posterCategory: 'umkm'
+            ),
           ],
         ),
       ),

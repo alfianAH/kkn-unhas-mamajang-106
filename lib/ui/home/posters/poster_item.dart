@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
 
 class PosterItem extends StatelessWidget{
+  final PosterData posterData;
+
+  PosterItem({
+    required this.posterData
+  });
+
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
@@ -9,7 +16,9 @@ class PosterItem extends StatelessWidget{
       width: 200,
       padding: const EdgeInsets.only(right: 8),
       child: InkWell(
-        onTap: (){},
+        onTap: (){
+
+        },
 
         child: Card(
           elevation: 0,
@@ -24,9 +33,16 @@ class PosterItem extends StatelessWidget{
                 flex: 2,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.network(
-                    'https://s.yimg.com/ny/api/res/1.2/uW49R_K.JqErV0iPwZIheA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwMDA7aD0xMjgx/https://s.yimg.com/os/creatr-uploaded-images/2021-07/9d249360-efae-11eb-9347-56aa82530c42',
+                  child: Image.asset(
+                    posterData.image ?? '',
                     fit: BoxFit.cover,
+                    errorBuilder: (context, exception, stackTrace){
+                      return Icon(
+                        Icons.broken_image,
+                        color: textTheme.headline1!.color,
+                        size: 75,
+                      );
+                    },
                   )
                 ),
               ),
@@ -37,7 +53,7 @@ class PosterItem extends StatelessWidget{
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    posterData.title ?? '',
                     style: textTheme.headline5,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,

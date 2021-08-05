@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kkn_unhas_mamajang_106/service/news/news_provider_service.dart';
 import 'package:kkn_unhas_mamajang_106/service/poster/poster_provider_service.dart';
 import 'package:kkn_unhas_mamajang_106/ui/home/home_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/theme/app_theme.dart';
@@ -7,7 +6,7 @@ import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  // _setupLogging();
+  _setupLogging();
   runApp(MyApp());
 }
 
