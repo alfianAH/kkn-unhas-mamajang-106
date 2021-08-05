@@ -62,7 +62,7 @@ class _PosterDetailScreenState extends State<PosterDetailScreen> {
                 SizedBox(height: 8,),
 
                 // Poster title
-                Text(
+                SelectableText(
                   widget.posterData.title ?? '',
                   style: textTheme.headline2,
                 ),
@@ -70,7 +70,7 @@ class _PosterDetailScreenState extends State<PosterDetailScreen> {
                 SizedBox(height: 8,),
 
                 // Poster date and author
-                Text(
+                SelectableText(
                   '${DateConverter.convertDate(widget.posterData.isoDate.toString())} oleh ${widget.posterData.author}',
                   style: textTheme.subtitle1
                 ),
@@ -86,7 +86,7 @@ class _PosterDetailScreenState extends State<PosterDetailScreen> {
                 SizedBox(height: 16,),
 
                 // Poster content
-                Text(
+                SelectableText(
                   widget.posterData.contentSnippet ?? '',
                   style: textTheme.bodyText1,
                 ),

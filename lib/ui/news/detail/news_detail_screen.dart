@@ -62,7 +62,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
               SizedBox(height: 8,),
 
               // News title
-              Text(
+              SelectableText(
                 widget.newsData.title ?? '',
                 style: textTheme.headline2,
               ),
@@ -70,7 +70,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
               SizedBox(height: 8,),
 
               // News date
-              Text(
+              SelectableText(
                 '${DateConverter.convertDate(widget.newsData.isoDate.toString())}',
                 style: textTheme.subtitle1
               ),
@@ -83,7 +83,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
               SizedBox(height: 16,),
 
               // News content
-              Text(
+              SelectableText(
                 widget.newsData.contentSnippet ?? '',
                 style: textTheme.bodyText1,
               ),
