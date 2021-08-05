@@ -2,7 +2,7 @@ import 'package:chopper/chopper.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
 import 'package:kkn_unhas_mamajang_106/service/poster/poster_provider_service.dart';
-import 'package:kkn_unhas_mamajang_106/ui/home/posters/poster_item.dart';
+import 'package:kkn_unhas_mamajang_106/ui/posters/poster_item.dart';
 import 'package:provider/provider.dart';
 
 class PosterList extends StatefulWidget{

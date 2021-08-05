@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:kkn_unhas_mamajang_106/ui/home/posters/poster_list.dart';
+import 'package:kkn_unhas_mamajang_106/ui/posters/poster_list.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 /// [HomeContent] is for poster list
