@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
+import 'package:kkn_unhas_mamajang_106/ui/posters/detail/poster_detail_screen.dart';
+import 'package:kkn_unhas_mamajang_106/utils/image_asset_loader.dart';
 
 class PosterItem extends StatelessWidget{
   final PosterData posterData;
@@ -17,7 +19,13 @@ class PosterItem extends StatelessWidget{
       padding: const EdgeInsets.only(right: 8),
       child: InkWell(
         onTap: (){
-
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return PosterDetailScreen(
+                posterData: posterData
+              );
+            })
+          );
         },
 
         child: Card(
@@ -33,16 +41,9 @@ class PosterItem extends StatelessWidget{
                 flex: 2,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    posterData.image ?? '',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, exception, stackTrace){
-                      return Icon(
-                        Icons.broken_image,
-                        color: textTheme.headline1!.color,
-                        size: 75,
-                      );
-                    },
+                  child: ImageAssetLoader(
+                    image: posterData.image ?? '',
+                    boxFit: BoxFit.cover,
                   )
                 ),
               ),
