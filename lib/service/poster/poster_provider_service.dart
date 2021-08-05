@@ -1,6 +1,6 @@
 import 'package:chopper/chopper.dart';
 import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
-import 'package:kkn_unhas_mamajang_106/service/news/news_model_converter.dart';
+import 'package:kkn_unhas_mamajang_106/service/poster/poster_model_converter.dart';
 
 part 'poster_provider_service.chopper.dart';
 
@@ -14,7 +14,7 @@ abstract class PosterProviderService extends ChopperService{
         _$PosterProviderService(),
       ],
       interceptors: [HttpLoggingInterceptor()],
-      converter: NewsModelConverter(),
+      converter: PosterModelConverter(),
       errorConverter: JsonConverter(),
     );
 
