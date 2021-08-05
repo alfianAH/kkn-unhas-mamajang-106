@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:chopper/chopper.dart';
-import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
+import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
 
 class PosterModelConverter implements Converter{
   @override
@@ -41,9 +41,9 @@ class PosterModelConverter implements Converter{
 
     try{
       var mapData = json.decode(body);
-      var newsModel = NewsProviderDetailResponse.fromJson(mapData);
+      var posterModel = PosterModel.fromJson(mapData);
 
-      return response.copyWith<BodyType>(body: newsModel as BodyType);
+      return response.copyWith<BodyType>(body: posterModel as BodyType);
     } catch(e){
       chopperLogger.warning(e);
       return response.copyWith<BodyType>(body: body);
