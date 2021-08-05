@@ -1,7 +1,5 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/ui/posters/poster_list.dart';
-import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 /// [HomeContent] is for poster list
 class HomeContent extends StatefulWidget{
@@ -43,20 +41,6 @@ class _HomeContentState extends State<HomeContent> {
                   'Covid-19',
                   style: textTheme.headline2,
                 ),
-
-                RichText(
-                  text: TextSpan(
-                    text: 'More',
-                    style: textTheme.headline3!.copyWith(
-                      inherit: true,
-                      color: AppColors.link
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = (){
-
-                      }
-                  )
-                )
               ],
             ),
 
@@ -75,20 +59,6 @@ class _HomeContentState extends State<HomeContent> {
                   'UMKM',
                   style: textTheme.headline2,
                 ),
-
-                RichText(
-                  text: TextSpan(
-                    text: 'More',
-                    style: textTheme.headline3!.copyWith(
-                      inherit: true,
-                      color: AppColors.link
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = (){
-
-                      }
-                  )
-                )
               ],
             ),
 

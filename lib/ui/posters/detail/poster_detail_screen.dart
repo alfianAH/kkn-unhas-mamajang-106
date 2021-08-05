@@ -80,9 +80,14 @@ class _PosterDetailScreenState extends State<PosterDetailScreen> {
                 SizedBox(height: 16,),
 
                 // Poster image
-                ImageAssetLoader(
-                  image: widget.posterData.image ?? '',
-                  boxFit: BoxFit.cover,
+                Center(
+                  child: Container(
+                    width: 250,
+                    child: ImageAssetLoader(
+                      image: widget.posterData.image ?? '',
+                      boxFit: BoxFit.cover,
+                    ),
+                  ),
                 ),
 
                 SizedBox(height: 16,),

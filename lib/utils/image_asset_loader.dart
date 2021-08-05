@@ -15,9 +15,7 @@ class ImageAssetLoader extends StatelessWidget{
 
     return Image.asset(
       image,
-
       fit: boxFit,
-
       errorBuilder: (context, exception, stackTrace){
         return Icon(
           Icons.broken_image,
