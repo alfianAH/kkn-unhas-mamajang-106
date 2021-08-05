@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:chopper/chopper.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 
-class ModelConverter implements Converter{
+class NewsModelConverter implements Converter{
   @override
   FutureOr<Request> convertRequest(Request request) {
     final req = applyHeader(

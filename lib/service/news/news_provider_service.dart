@@ -1,7 +1,7 @@
 import 'package:chopper/chopper.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_list_response.dart';
-import 'package:kkn_unhas_mamajang_106/service/news/model_converter.dart';
+import 'package:kkn_unhas_mamajang_106/service/news/news_model_converter.dart';
 
 part 'news_provider_service.chopper.dart';
 
@@ -15,7 +15,7 @@ abstract class NewsProviderService extends ChopperService{
         _$NewsProviderService(),
       ],
       interceptors: [HttpLoggingInterceptor()],
-      converter: ModelConverter(),
+      converter: NewsModelConverter(),
       errorConverter: JsonConverter(),
     );
 
