@@ -21,7 +21,7 @@ abstract class PosterProviderService extends ChopperService{
     return _$PosterProviderService(client);
   }
 
-  @Get(path: '{posterCategoryName}')
+  @Get(path: '{posterCategoryName}.json')
   Future<Response<PosterModel>> getPosters(
       @Path() String posterCategoryName);
 }

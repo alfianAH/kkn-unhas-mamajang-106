@@ -18,7 +18,7 @@ class _$PosterProviderService extends PosterProviderService {
 
   @override
   Future<Response<PosterModel>> getPosters(String posterCategoryName) {
-    final $url = '$posterCategoryName';
+    final $url = '$posterCategoryName.json';
     final $request = Request('GET', $url, client.baseUrl);
     return client.send<PosterModel, PosterModel>($request);
   }
