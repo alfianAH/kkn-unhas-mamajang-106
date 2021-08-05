@@ -19,6 +19,7 @@ class NewsDetailScreen extends StatefulWidget{
 
 class _NewsDetailScreenState extends State<NewsDetailScreen> {
   ScrollController _scrollController = ScrollController();
+  final String _dateFormat = 'EEEE, dd-MM-yy, HH:mm';
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
 
               // News date
               SelectableText(
-                '${DateConverter.convertDate(widget.newsData.isoDate.toString())}',
+                '${DateConverter.convertDate(widget.newsData.isoDate.toString(), _dateFormat)}',
                 style: textTheme.subtitle1
               ),
 

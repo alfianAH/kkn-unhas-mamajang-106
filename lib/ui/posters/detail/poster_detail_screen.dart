@@ -19,6 +19,7 @@ class PosterDetailScreen extends StatefulWidget{
 
 class _PosterDetailScreenState extends State<PosterDetailScreen> {
   ScrollController _scrollController = ScrollController();
+  final String _dateFormat = 'EEEE, dd-MM-yy';
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,8 @@ class _PosterDetailScreenState extends State<PosterDetailScreen> {
 
                 // Poster date and author
                 SelectableText(
-                  '${DateConverter.convertDate(widget.posterData.isoDate.toString())} oleh ${widget.posterData.author}',
+                  '${DateConverter.convertDate(widget.posterData.isoDate.toString(), _dateFormat)} '
+                      'oleh ${widget.posterData.author}',
                   style: textTheme.subtitle1
                 ),
 

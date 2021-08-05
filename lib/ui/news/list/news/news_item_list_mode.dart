@@ -7,6 +7,7 @@ import 'package:kkn_unhas_mamajang_106/utils/image_network_loader.dart';
 
 class NewsItemListMode extends StatelessWidget{
   final NewsData newsData;
+  final String _dateFormat = 'EEEE, dd-MM-yy, HH:mm';
 
   NewsItemListMode({
     required this.newsData,
@@ -77,7 +78,7 @@ class NewsItemListMode extends StatelessWidget{
 
                       // News date
                       Text(
-                        DateConverter.convertDate(newsData.isoDate ?? ''),
+                        DateConverter.convertDate(newsData.isoDate ?? '', _dateFormat),
                         style: textTheme.subtitle2,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
