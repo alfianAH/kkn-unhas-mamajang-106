@@ -19,6 +19,7 @@ class HomeScreenWeb extends StatelessWidget{
     return Scaffold(
       // Body
       body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Side navigation bar
           NavigationRail(

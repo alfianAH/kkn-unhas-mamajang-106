@@ -77,14 +77,6 @@ class NewsDetailContent extends StatelessWidget{
 
               SizedBox(height: 16,),
 
-              // News content
-              SelectableText(
-                newsData.contentSnippet ?? '',
-                style: textTheme.bodyText1,
-              ),
-
-              SizedBox(height: 8,),
-
               // News link
               RichText(
                 text: TextSpan(
@@ -97,6 +89,14 @@ class NewsDetailContent extends StatelessWidget{
                       launch(newsData.link.toString());
                     }
                 ),
+              ),
+
+              SizedBox(height: 8,),
+
+              // News content
+              SelectableText(
+                newsData.contentSnippet ?? '',
+                style: textTheme.bodyText1,
               ),
             ],
           ),
