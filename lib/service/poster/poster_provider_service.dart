@@ -9,7 +9,7 @@ abstract class PosterProviderService extends ChopperService{
 
   static PosterProviderService create(){
     final client = ChopperClient(
-      baseUrl: "posters/api/",
+      baseUrl: "assets/posters/api/",
       services: [
         _$PosterProviderService(),
       ],
