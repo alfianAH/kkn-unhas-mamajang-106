@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
+import 'package:kkn_unhas_mamajang_106/ui/detail/responsive_detail_content_web.dart';
 import 'package:kkn_unhas_mamajang_106/ui/posters/detail/poster_detail_content.dart';
 
-class PosterDetailScreenMobile extends StatelessWidget{
+class PosterDetailScreenWeb extends StatelessWidget{
   final PosterData posterData;
 
-  PosterDetailScreenMobile({
+  PosterDetailScreenWeb({
     required this.posterData,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(18),
-      child: PosterDetailContent(
-        posterData: posterData,
-      ),
+    return ResponsiveDetailContentWeb(
+      detailContent: PosterDetailContent(
+        posterData: posterData
+      )
     );
   }
 }
