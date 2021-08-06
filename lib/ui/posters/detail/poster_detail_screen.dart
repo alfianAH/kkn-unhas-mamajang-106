@@ -31,89 +31,84 @@ class _PosterDetailScreenState extends State<PosterDetailScreen> {
         child: Container(
           padding: const EdgeInsets.all(18),
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Title
-                Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Title
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: textTheme.headline1!.color,
+                    ),
+                  ),
+
+                  SizedBox(width: 8),
+
+                  Text(
+                    'Poster',
+                    style: textTheme.headline1,
+                  )
+                ],
+              ),
+
+              Divider(
+                color: textTheme.headline1!.color,
+                thickness: 2,
+              ),
+
+              SizedBox(height: 8,),
+
+              // Details content
+              Container(
+                width: 600,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IconButton(
-                      onPressed: (){
-                        Navigator.pop(context);
-                      },
-                      icon: Icon(
-                        Icons.arrow_back_ios_rounded,
-                        color: textTheme.headline1!.color,
+                    // Poster title
+                    SelectableText(
+                      widget.posterData.title ?? '',
+                      style: textTheme.headline2,
+                    ),
+
+                    SizedBox(height: 8,),
+
+                    // Poster date and author
+                    SelectableText(
+                      '${DateConverter.convertDate(widget.posterData.isoDate.toString(), _dateFormat)} '
+                          'oleh ${widget.posterData.author}',
+                      style: textTheme.subtitle1
+                    ),
+
+                    SizedBox(height: 16,),
+
+                    // Poster image
+                    Center(
+                      child: Container(
+                        width: 250,
+                        child: ImageAssetLoader(
+                          image: widget.posterData.image ?? '',
+                          boxFit: BoxFit.cover,
+                        ),
                       ),
                     ),
 
-                    SizedBox(width: 8),
+                    SizedBox(height: 16,),
 
-                    Text(
-                      'Poster',
-                      style: textTheme.headline1,
-                    )
+                    // Poster content
+                    SelectableText(
+                      widget.posterData.contentSnippet ?? '',
+                      style: textTheme.bodyText1,
+                    ),
+
+                    SizedBox(height: 8,),
                   ],
                 ),
-
-                Divider(
-                  color: textTheme.headline1!.color,
-                  thickness: 2,
-                ),
-
-                SizedBox(height: 8,),
-
-                // Poster title
-                SelectableText(
-                  widget.posterData.title ?? '',
-                  style: textTheme.headline2,
-                ),
-
-                SizedBox(height: 8,),
-
-                // Poster date and author
-                SelectableText(
-                  '${DateConverter.convertDate(widget.posterData.isoDate.toString(), _dateFormat)} '
-                      'oleh ${widget.posterData.author}',
-                  style: textTheme.subtitle1
-                ),
-
-                SizedBox(height: 16,),
-
-                // Poster image
-                Center(
-                  child: Container(
-                    width: 250,
-                    child: ImageAssetLoader(
-                      image: widget.posterData.image ?? '',
-                      boxFit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 16,),
-
-                // Poster content
-                SelectableText(
-                  widget.posterData.contentSnippet ?? '',
-                  style: textTheme.bodyText1,
-                ),
-
-                SizedBox(height: 8,),
-
-                // News link
-                // RichText(
-                //   text: TextSpan(
-                //     text: 'Klik untuk melihat artikel asli.',
-                //     style: textTheme.bodyText1!.copyWith(
-                //         color: AppColors.link
-                //     ),
-                //     recognizer: TapGestureRecognizer()
-                //       ..onTap = () {
-                //         launch(widget.posterData.link.toString());
-                //       }
-                //   ),
-                // ),
-              ]
+              ),
+            ]
           ),
         ),
       ),
