@@ -16,34 +16,30 @@ class _NewsScreenState extends State<NewsScreen> {
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Provider(
-      create: (_) => NewsProviderService.create(),
-      dispose: (_, NewsProviderService service) => service.client.dispose(),
-      child: SingleChildScrollView(
-          controller: _scrollController,
-          child: Container(
-            padding: const EdgeInsets.all(18),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Berita Harian',
-                  style: textTheme.headline1,
-                ),
+    return SingleChildScrollView(
+      controller: _scrollController,
+      child: Container(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Berita Harian',
+              style: textTheme.headline1,
+            ),
 
-                Divider(
-                  color: textTheme.headline1!.color,
-                  thickness: 2,
-                ),
+            Divider(
+              color: textTheme.headline1!.color,
+              thickness: 2,
+            ),
 
-                SizedBox(height: 8,),
+            SizedBox(height: 8,),
 
-                // News Provider List
-                NewsProviderList(),
-              ],
-            )
-          )
-      ),
+            // News Provider List
+            NewsProviderList(),
+          ],
+        )
+      )
     );
   }
 
