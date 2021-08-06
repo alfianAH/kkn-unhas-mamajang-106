@@ -1,9 +1,9 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:kkn_unhas_mamajang_106/ui/home/mobile/home_screen_mobile.dart';
 import 'package:kkn_unhas_mamajang_106/ui/home/home_content.dart';
+import 'package:kkn_unhas_mamajang_106/ui/home/web/home_screen_web.dart';
 import 'package:kkn_unhas_mamajang_106/ui/news/news_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/settings/settings_screen.dart';
-import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 
 class HomeScreen extends StatefulWidget{
   final ValueNotifier<ThemeMode> notifier;
@@ -37,39 +37,22 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ];
 
-    return Scaffold(
-      // Body
-      body: screens[_currentIndex],
-      extendBody: true,
-
-      // Bottom NavBar
-      bottomNavigationBar: CurvedNavigationBar(
-        index: _currentIndex,
-        onTap: _updateIndex,
-        height: 50,
-        backgroundColor: Colors.transparent,
-        color: AppColors.primaryColor,
-        animationDuration: Duration(milliseconds: 200),
-        items: [
-          // Home
-          Icon(
-            Icons.home_rounded,
-            color: Colors.white,
-          ),
-
-          // News
-          Icon(
-            Icons.article_rounded,
-            color: Colors.white,
-          ),
-
-          // Settings
-          Icon(
-            Icons.settings_rounded,
-            color: Colors.white,
-          )
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if(constraints.maxWidth <= 500){
+          return HomeScreenMobile(
+            screens: screens,
+            currentIndex: _currentIndex,
+            updateIndex: _updateIndex,
+          );
+        } else{
+          return HomeScreenWeb(
+            screens: screens,
+            currentIndex: _currentIndex,
+            updateIndex: _updateIndex,
+          );
+        }
+      },
     );
   }
 }

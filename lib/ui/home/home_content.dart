@@ -22,7 +22,7 @@ class _HomeContentState extends State<HomeContent> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'KKN Unhas Mamajang 106',
+              'KKN Unhas Mamajang 106 ${MediaQuery.of(context).size.width}',
               style: textTheme.headline1,
             ),
 
