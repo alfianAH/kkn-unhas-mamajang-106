@@ -62,46 +62,55 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
 
               SizedBox(height: 8,),
 
-              // News title
-              SelectableText(
-                widget.newsData.title ?? '',
-                style: textTheme.headline2,
-              ),
+              // Details content
+              Container(
+                width: 600,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // News title
+                    SelectableText(
+                      widget.newsData.title ?? '',
+                      style: textTheme.headline2,
+                    ),
 
-              SizedBox(height: 8,),
+                    SizedBox(height: 8,),
 
-              // News date
-              SelectableText(
-                '${DateConverter.convertDate(widget.newsData.isoDate.toString(), _dateFormat)}',
-                style: textTheme.subtitle1
-              ),
+                    // News date
+                    SelectableText(
+                      '${DateConverter.convertDate(widget.newsData.isoDate.toString(), _dateFormat)}',
+                      style: textTheme.subtitle1
+                    ),
 
-              SizedBox(height: 16,),
+                    SizedBox(height: 16,),
 
-              // News image
-              ImageNetworkLoader(newsData: widget.newsData),
+                    // News image
+                    ImageNetworkLoader(newsData: widget.newsData),
 
-              SizedBox(height: 16,),
+                    SizedBox(height: 16,),
 
-              // News content
-              SelectableText(
-                widget.newsData.contentSnippet ?? '',
-                style: textTheme.bodyText1,
-              ),
+                    // News content
+                    SelectableText(
+                      widget.newsData.contentSnippet ?? '',
+                      style: textTheme.bodyText1,
+                    ),
 
-              SizedBox(height: 8,),
+                    SizedBox(height: 8,),
 
-              // News link
-              RichText(
-                text: TextSpan(
-                  text: 'Klik untuk melihat artikel asli.',
-                  style: textTheme.bodyText1!.copyWith(
-                    color: AppColors.link
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      launch(widget.newsData.link.toString());
-                    }
+                    // News link
+                    RichText(
+                      text: TextSpan(
+                        text: 'Klik untuk melihat artikel asli.',
+                        style: textTheme.bodyText1!.copyWith(
+                          color: AppColors.link
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            launch(widget.newsData.link.toString());
+                          }
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ]
