@@ -39,13 +39,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return LayoutBuilder(
       builder: (context, constraints) {
+        // If max width is less or equal to 500, ...
         if(constraints.maxWidth <= 500){
+          // Show mobile screen
           return HomeScreenMobile(
             screens: screens,
             currentIndex: _currentIndex,
             updateIndex: _updateIndex,
           );
         } else{
+          // Show web screen
           return HomeScreenWeb(
             screens: screens,
             currentIndex: _currentIndex,

@@ -30,6 +30,13 @@ class HomeScreenWeb extends StatelessWidget{
             unselectedLabelTextStyle: textTheme.caption?.copyWith(
               color: Colors.white60
             ),
+            leading: Container(
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(
+                'images/logo-kkn.png',
+                width: 56,
+              ),
+            ),
             destinations: [
               // Home
               NavigationRailDestination(
@@ -60,9 +67,9 @@ class HomeScreenWeb extends StatelessWidget{
             ],
           ),
 
-          SizedBox(width: 16,),
-
-          screens[currentIndex]
+          Flexible(
+            child: screens[currentIndex],
+          )
         ]
       ),
     );
