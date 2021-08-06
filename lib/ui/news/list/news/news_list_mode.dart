@@ -19,16 +19,19 @@ class _NewsListModeState extends State<NewsListMode> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: ListView.builder(
-        controller: _scrollController,
-        shrinkWrap: true,
-        itemBuilder: (context, index){
-          // Check image URL is null or not
-          return NewsItemListMode(
-            newsData: widget.newsDataList[index]
-          );
-        },
-        itemCount: 25,
+      child: Container(
+        width: 600,
+        child: ListView.builder(
+          controller: _scrollController,
+          shrinkWrap: true,
+          itemBuilder: (context, index){
+            // Check image URL is null or not
+            return NewsItemListMode(
+              newsData: widget.newsDataList[index]
+            );
+          },
+          itemCount: 25,
+        ),
       ),
     );
   }

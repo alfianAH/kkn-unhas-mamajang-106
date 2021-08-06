@@ -24,6 +24,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return Container(
       padding: const EdgeInsets.all(18),
+      width: 600,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,6 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
           SizedBox(height: 8,),
 
+          // Dark mode setting
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

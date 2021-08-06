@@ -25,7 +25,7 @@ class _NewsListGridModeState extends State<NewsListGridMode> {
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemCount: 5,
+        itemCount: 6,
         itemBuilder: (context, index){
           return NewsItemGridMode(
             newsData: widget.newsProviderDetailResponse.data![index],
