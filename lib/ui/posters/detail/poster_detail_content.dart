@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/poster/poster_model.dart';
+import 'package:kkn_unhas_mamajang_106/ui/photo_viewer/photo_viewer_screen.dart';
 import 'package:kkn_unhas_mamajang_106/utils/date_converter.dart';
 import 'package:kkn_unhas_mamajang_106/utils/image_asset_loader.dart';
 
@@ -71,12 +72,23 @@ class PosterDetailContent extends StatelessWidget{
               SizedBox(height: 16,),
 
               // Poster image
-              Center(
-                child: Container(
-                  width: 250,
-                  child: ImageAssetLoader(
-                    imagePath: posterData.image ?? '',
-                    boxFit: BoxFit.cover,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context){
+                      return PhotoViewerScreen(imagePath: posterData.image ?? '');
+                    }
+                  ));
+                },
+                child: Hero(
+                  tag: PhotoViewerScreen.heroTag,
+                  child: Center(
+                    child: Container(
+                      width: 250,
+                      child: ImageAssetLoader(
+                        imagePath: posterData.image ?? '',
+                      ),
+                    ),
                   ),
                 ),
               ),

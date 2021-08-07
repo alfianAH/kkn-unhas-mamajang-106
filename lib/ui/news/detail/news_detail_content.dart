@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
+import 'package:kkn_unhas_mamajang_106/ui/photo_viewer/photo_viewer_screen.dart';
 import 'package:kkn_unhas_mamajang_106/ui/values/colors/app_colors.dart';
 import 'package:kkn_unhas_mamajang_106/utils/date_converter.dart';
 import 'package:kkn_unhas_mamajang_106/utils/image_network_loader.dart';
@@ -73,7 +74,24 @@ class NewsDetailContent extends StatelessWidget{
               SizedBox(height: 16,),
 
               // News image
-              ImageNetworkLoader(imagePath: newsData.image),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context){
+                      return PhotoViewerScreen(
+                        imagePath: newsData.image,
+                        isFromNetwork: true,
+                      );
+                    }
+                  ));
+                },
+                child: Hero(
+                  tag: PhotoViewerScreen.heroTag,
+                  child: ImageNetworkLoader(
+                    imagePath: newsData.image
+                  ),
+                ),
+              ),
 
               SizedBox(height: 16,),
 
