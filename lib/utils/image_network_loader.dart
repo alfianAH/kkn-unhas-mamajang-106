@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kkn_unhas_mamajang_106/model/news/news_provider_detail_response.dart';
 
 class ImageNetworkLoader extends StatelessWidget{
-  final NewsData newsData;
+  final imagePath;
   final BoxFit? boxFit;
 
   ImageNetworkLoader({
-    required this.newsData,
+    required this.imagePath,
     this.boxFit
   });
 
@@ -15,8 +14,8 @@ class ImageNetworkLoader extends StatelessWidget{
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return Image.network(
-      newsData.image.runtimeType == String
-          ? newsData.image : newsData.image['small'],
+      imagePath.runtimeType == String
+          ? imagePath : imagePath['small'],
 
       fit: boxFit,
 

@@ -75,7 +75,7 @@ class PosterDetailContent extends StatelessWidget{
                 child: Container(
                   width: 250,
                   child: ImageAssetLoader(
-                    image: posterData.image ?? '',
+                    imagePath: posterData.image ?? '',
                     boxFit: BoxFit.cover,
                   ),
                 ),

@@ -42,7 +42,7 @@ class NewsItemGridMode extends StatelessWidget{
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageNetworkLoader(
-                      newsData: newsData,
+                      imagePath: newsData.image,
                       boxFit: BoxFit.fitHeight,
                     ),
                   ),

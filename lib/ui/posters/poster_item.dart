@@ -42,7 +42,7 @@ class PosterItem extends StatelessWidget{
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: ImageAssetLoader(
-                    image: posterData.image ?? '',
+                    imagePath: posterData.image ?? '',
                     boxFit: BoxFit.cover,
                   )
                 ),

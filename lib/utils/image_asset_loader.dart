@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ImageAssetLoader extends StatelessWidget{
-  final String image;
+  final String imagePath;
   final BoxFit? boxFit;
 
   ImageAssetLoader({
-    required this.image,
+    required this.imagePath,
     this.boxFit
   });
 
@@ -14,7 +14,7 @@ class ImageAssetLoader extends StatelessWidget{
     TextTheme textTheme = Theme.of(context).textTheme;
 
     return Image.asset(
-      image,
+      imagePath,
       fit: boxFit,
       errorBuilder: (context, exception, stackTrace){
         return Icon(

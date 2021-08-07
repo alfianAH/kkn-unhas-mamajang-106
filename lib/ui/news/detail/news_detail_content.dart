@@ -73,7 +73,7 @@ class NewsDetailContent extends StatelessWidget{
               SizedBox(height: 16,),
 
               // News image
-              ImageNetworkLoader(newsData: newsData),
+              ImageNetworkLoader(imagePath: newsData.image),
 
               SizedBox(height: 16,),
 

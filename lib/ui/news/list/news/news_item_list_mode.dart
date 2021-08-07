@@ -51,7 +51,7 @@ class NewsItemListMode extends StatelessWidget{
                     width: 140,
                     height: 140,
                     child: ImageNetworkLoader(
-                      newsData: newsData,
+                      imagePath: newsData.image,
                       boxFit: BoxFit.fitHeight,
                     ),
                   )
