@@ -58,12 +58,12 @@ class _PosterListState extends State<PosterList> {
           // If there are responses, ...
           if(posterModel.total! > 0){
             // Show news list
-            return Container(
-              padding: const EdgeInsets.only(top: 8),
-              height: 300,
-              child: Scrollbar(
-                controller: _scrollController,
-                isAlwaysShown: true,
+            return Scrollbar(
+              controller: _scrollController,
+              isAlwaysShown: true,
+              child: Container(
+                padding: const EdgeInsets.only(top: 8),
+                height: 300,
                 child: ListView.builder(
                   controller: _scrollController,
                   scrollDirection: Axis.horizontal,
