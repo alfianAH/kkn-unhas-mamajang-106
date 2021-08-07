@@ -61,16 +61,20 @@ class _PosterListState extends State<PosterList> {
             return Container(
               padding: const EdgeInsets.only(top: 8),
               height: 300,
-              child: ListView.builder(
+              child: Scrollbar(
                 controller: _scrollController,
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: posterModel.total,
-                itemBuilder: (context, index){
-                  return PosterItem(
-                    posterData: posterModel.data![index],
-                  );
-                }
+                isAlwaysShown: true,
+                child: ListView.builder(
+                  controller: _scrollController,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: posterModel.total,
+                  itemBuilder: (context, index){
+                    return PosterItem(
+                      posterData: posterModel.data![index],
+                    );
+                  }
+                ),
               )
             );
           }

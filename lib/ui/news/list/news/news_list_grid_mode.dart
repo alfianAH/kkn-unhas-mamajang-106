@@ -21,16 +21,20 @@ class _NewsListGridModeState extends State<NewsListGridMode> {
     return Container(
       padding: const EdgeInsets.only(top: 8),
       height: 300,
-      child: ListView.builder(
+      child: Scrollbar(
         controller: _scrollController,
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemCount: 6,
-        itemBuilder: (context, index){
-          return NewsItemGridMode(
-            newsData: widget.newsProviderDetailResponse.data![index],
-          );
-        }
+        isAlwaysShown: true,
+        child: ListView.builder(
+          controller: _scrollController,
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          itemCount: 6,
+          itemBuilder: (context, index){
+            return NewsItemGridMode(
+              newsData: widget.newsProviderDetailResponse.data![index],
+            );
+          }
+        ),
       ),
     );
   }
